@@ -24,7 +24,7 @@ pub(crate) fn main() {
     let solution = recurse(input::DATA);
     match solution {
         Ok(solution) => {
-            println!("The solution is {:?}", solution)
+            println!("The solution is {:?}", solution.0 * solution.1)
         }
         // Err(E) => {
         _ => {
