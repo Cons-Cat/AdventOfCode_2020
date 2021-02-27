@@ -1,0 +1,5 @@
+#+title:     Advent of Code 2020 (Rust)
+#+author:    William Gooch
+#+email:     wgooch2000@gmail.com
+
+To study the Rust programming language, and improve my Vimming meanwhile, I am attempting last year's Advent of Code.
