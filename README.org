@@ -3,3 +3,8 @@
 #+email:     wgooch2000@gmail.com
 
 To study the Rust programming language, and improve my Vimming meanwhile, I am attempting last year's Advent of Code.
+
+* Day 1
+I solved this problem recursively. I passed the data into a function which compares the first element to every other element of the array.
+Then it passes a slice of its input, excluding the first element, into itself. When two elements that are compared equal =2020=, it returns.
+If the size of the input is less than 2, it returns an error.
