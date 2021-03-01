@@ -1,8 +1,6 @@
 mod input;
 
 fn main() {
-    // println!("{}", input::DATA.len());
-    // println!("{}", input::DATA[0].chars().count());
     fn advance(x: usize, y: usize, t: u32) -> u32 {
         if y < input::DATA.len() {
             return advance(

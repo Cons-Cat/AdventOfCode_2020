@@ -6,10 +6,28 @@ To study the Rust programming language, and improve my Vimming meanwhile, I am a
 
 * Day 1
 ** Part 1
-I solved this problem recursively. I passed the data into a function which compares the first element to every other element of the array.
-Then it passes a slice of its input, excluding the first element, into itself. When two elements that are compared equal =2020=, it returns.
+The challenge is to find two elements of a data set that sum to 2020.
+I solved this problem recursively. The data passes into a function that compares the first element to every other element of the set.
+Then it passes a slice of its input, which excludes the first element, into itself. When two compared elements sum to =2020=, it returns a tuple of those elements.
 If the size of the input is less than 2, it returns an error.
 ** Part 2
-The challenge of Day 2 is to make my previous solution scale.
-It is only required to evaluate three items, but I felt it was in the spirit of this challenge to write a solution that has truly arbitrary parameters.
-My recursive function now nests itself =n= times deep to find elements that sum to =2020=.
+The challenge of Part 2 is to make my previous solution scale.
+It is only required to evaluate three items, but I felt it was in the spirit of this challenge to write a solution that has arbitrary parameters.
+My new recursive function now nests itself =n= times deep to find =n= elements that sum to =2020=. =n= is =3= in this example.
+* Day 2
+** Part 1
+The challenge is to sum the count of elements in a list that fulfill certain parameters. I solved this problem procedurally.
+A mutable count of valid elements is initialized, and I then iterate through every element of the data set.
+The elements are human readable text, so I split each element by =' '= and ='-'= characters, then parse the substrings into the data that I need.
+I branchlessly increment the counting variable with a boolean condition that casted to an unsigned integer.
+** Part 2
+This challenge is similar to Part 1, but it requires a different condition to evaluate.
+I simply hard coded a different condition, but in retrospect, I believe that passing a closure into a function to sum the count of valid elements would have been better in the spirit of this challenge.
+* Day 3
+** Part 1
+The challenge is to traverse a grid with a finite Y dimension and an infinite X dimension (with elements that tile).
+I wrote a recursive function to traverse this grid in increments of slope =3/1=, exiting when its =y= position exceeds the height of the grid.
+It branchlessly increments a counter variable when the element at its position is ='#'=, and returns this count.
+** Part 2
+This challenge requires an arbitrary slope. I represented slopes as tuples of two integral elements, and initialized an array of 5 slopes.
+I learned to use some of Rust's functional features I have read about, and mapped this array to their counts with a closure of the previous recursive function. That map is collected into a vector of unsigned integers, which is piped into a product function.
