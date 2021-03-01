@@ -1,22 +1,16 @@
 mod input;
-const INIT_X: u32 = 0;
-const INIT_Y: u32 = 0;
 
 fn main() {
-    fn advance(x: u32, y: u32, t: u32) -> u32 {
-        if y < input::DATA.len() as u32 {
+    fn advance(x: usize, y: usize, t: u32) -> u32 {
+        if y < input::DATA.len() {
             return advance(
-                (x + 3) % input::DATA[0].chars().count() as u32,
+                (x + 3) % input::DATA[0].chars().count(),
                 y + 1,
-                input::DATA[y as usize]
-                    .chars()
-                    .nth(x as usize)
-                    .unwrap()
-                    .eq(&'#') as u32,
+                input::DATA[y as usize].chars().nth(x).unwrap().eq(&'#') as u32,
             );
         } else {
             return t;
         }
     }
-    println!("The answer is {}", advance(INIT_X, INIT_Y, 0))
+    println!("The answer is {}", advance(0, 0, 0))
 }
